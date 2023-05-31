@@ -1,0 +1,329 @@
+<!doctype html>
+
+<html>
+	
+<head>
+    
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Cal Poly Intramurals | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="75" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Photo Gallery</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Audio Interviews</a>
+        </li>
+        <li>
+          <a href="#vid">Video</a>
+			</li>
+      <li>
+          <a href="#num">Infographic</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Cal Poly Intramural Sports</h2>
+<article>
+<p class="tab">Intramural sports can be found on college campuses all across the nation, including here at Cal Poly. Through Cal Poly ASI, the school offers a wide variety of sports for students to partake in, either in a competitive or recreational environment. <br><br>However, it isn't all about competition and winning or losing. These intramural sports allow for students to express themselves, meet people who have similar interests, and create closer bonds through the love of sports and physical activity. This website is all about that: how intramural sports impact Cal Poly students.</p>
+<p class="tab"><a href="#gal">Sunday Night Softball</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Sunday Night Softball</h2>
+<article><!--beginning of article-->
+<p class="tab">Sunday nights signify softball night for intramural sports, as softball games run from 6:30 to 9:30 on three separate fields at the Cal Poly Sports Complex.
+
+The games range from Division III, the most recreational division, to Division I, the most competitive league in intramurals. Every game being played on the same night creates a fun and inviting environment for both players and fans looking to end their weekends on a high note.
+</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="The Cal Poly Sports Complex contains three softball fields equipped with lights for the night games. April 23, 2023."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="No matter the level of play of these games, the same set of rules must be followed by every player on the field. Although these rules exist, most games are relaxed and laid back. April 23, 2023."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="These rules of both the actual sport and for sportsmanship are held up by two umpires in each game, both of whom are Cal Poly students. April 23, 2023."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Most games draw at least a few fans, mainly in the form of friends of the players. The crowds may not be large in size, but they can get rowdy if a big play is made. April 23, 2023."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="“I come to the games because it’s fun to watch my friends play and it gives me something entertaining to do when I want to get away from schoolwork,” business junior Emma Tracewell said. Pictured: Tracewell (left) and sports management senior Jaren Silva. April 23, 2023."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="The majority of teams are made up of friends, groups or clubs from around campus. “Intramurals are a great way for us to be able to get together once or twice a week and just have fun while playing a sport we all enjoy,” Silva said. Photo: April 23, 2023."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="“It’s just a great environment of people that love to play softball,” sports management senior Brenden Fisher said. “Most of us are just washed up high school baseball or softball players so it’s really fun.” April 23, 2023."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Given that many of the intramural softball players are former high school athletes, there are plenty of old pieces of equipment and gear used. ASI provides gloves, bats and balls if necessary, but most players prefer their personal items. April 23, 2023."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="When the game kicks off, there are yells of encouragement combined with plenty of laughs from the players, highlighting the balance between competitiveness and the pure enjoyment of the sport. April 23, 2023."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="By the end of the night, final scores have been tallied and both teams have shaken hands out of sportsmanship. While this week’s installation of Softball Sunday is over, every team will return seven days later to do the same thing all over again. April 23, 2023."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Student Experiences</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">What is Your Favorite IM Sport?</h2>
+<article>
+  <p class="tab">Click on images to hear a few students' favorite intramural sport at Cal Poly!<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Why Play?</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<!--beginning of new section-->
+<div class="row blueBG">
+<h2 id="vid">Why Play Intramural Sports?</h1>
+<article>
+<p class="tab">Jason Milne is an intramural sports superstar. Let's hear what he had to say about his experience and why others should consider playing.</p>    
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/mov2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</article>
+</div>
+<!--end of video section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax2.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of infographic section-->
+<div class="row">
+
+<h2 id="tba">A look at the numbers</h1>
+
+<article>
+
+<p class="tab">Thousands play intramural sports at Cal Poly. However, the most popular of those sports may surprise you. Included below are the total amount of participants in each sport as well as the number of unique participants.</p>
+
+<div class="infogram-embed" data-id="4655a692-d0c6-4aba-938f-ff8da7714c83" data-type="interactive" data-title="Pie Chart"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/4655a692-d0c6-4aba-938f-ff8da7714c83" style="color:#989898!important;text-decoration:none!important;" target="_blank">Pie Chart</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+</article>
+
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Site Name Here | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 20__ | Site by You 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
