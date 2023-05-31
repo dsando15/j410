@@ -15,7 +15,7 @@ body {
 
 /*----------------navigation section-----------------*/
 header {
-	height: 100px; /*(height of nav bar)*/
+	height: 110px; /*(height of nav bar)*/
 	position: fixed; /*(keeps nav bar visible when scrolling)*/
 	width: 100%;
 	top: 0;
